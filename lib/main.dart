@@ -1,4 +1,5 @@
 import 'package:bloc_example/common/model/catalog.dart';
+import 'package:bloc_example/common/widgets/cart_button.dart';
 import 'package:bloc_example/common/widgets/product_square.dart';
 import 'package:bloc_example/common/widgets/theme.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,9 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Bloc n'),
-        actions: <Widget>[],
+        actions: <Widget>[
+          CartButton(),
+        ],
       ),
       body: Grid(),
     );
