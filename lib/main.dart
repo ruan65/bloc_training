@@ -1,3 +1,5 @@
+import 'package:bloc_example/common/model/catalog.dart';
+import 'package:bloc_example/common/widgets/product_square.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -33,15 +35,14 @@ class Grid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      children: <Widget>[
-        Text('one'),
-        Text('one'),
-        Text('one'),
-        Text('one'),
-        Text('one'),
-        Text('one'),
-        Text('two'),
-      ],
+      children: catalog.products.map((product) {
+        return ProductSquare(
+          product: product,
+          onTap: () {
+            print('I am $product');
+          },
+        );
+      }).toList(),
     );
   }
 }
