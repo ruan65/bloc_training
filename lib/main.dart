@@ -1,5 +1,6 @@
 import 'package:bloc_example/common/model/catalog.dart';
 import 'package:bloc_example/common/widgets/product_square.dart';
+import 'package:bloc_example/common/widgets/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,9 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bloc icon',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: appTheme,
       home: MyHomePage(),
     );
   }
@@ -35,14 +34,16 @@ class Grid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      children: catalog.products.map((product) {
-        return ProductSquare(
-          product: product,
-          onTap: () {
-            print('I am $product');
-          },
-        );
-      }).toList(),
+      children: getProductListData(),
     );
   }
 }
+
+List<Widget> getProductListData() => catalog.products.map((product) {
+      return ProductSquare(
+        product: product,
+        onTap: () {
+          print('I am $product');
+        },
+      );
+    }).toList();

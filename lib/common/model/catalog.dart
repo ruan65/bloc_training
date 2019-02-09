@@ -11,7 +11,7 @@ Catalog fetchCatalogSync() {
 
 class Catalog {
   static const List<Product> _sampleProducts = const <Product>[
-    const Product(42, "Sweater", const Color(0xFF536DFE)),
+    const Product(42, "Sweater", const Color(0xFFf36D6E)),
     const Product(1024, "Socks", const Color(0xFFFFD500)),
     const Product(1337, "Shawl", const Color(0xFF1CE8B5)),
     const Product(123, "Jacket", const Color(0xFFFF6C00)),
@@ -25,7 +25,7 @@ class Catalog {
     const Product(133741, "Apple Watch", const Color(0xFF1CE8B5)),
     const Product(12311, "Gillette Match", const Color(0xFFFF6C00)),
     const Product(201800, "Motorbike", const Color(0xFF574DDD)),
-    const Product(128098, "Underpants Calvin Clein", const Color(0xFFABD0F2)),
+    const Product(128098, "'Calvin Clein'\nUnderpants", const Color(0xFFABD0F2)),
     const Product(32121, "Cognac Napoleon", const Color(0xFF8DA0FC)),
     const Product(1000, "Car Tesla", const Color(0xFF1CE8B5)),
   ];
