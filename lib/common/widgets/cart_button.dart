@@ -6,30 +6,35 @@ class CartButton extends StatefulWidget {
   final Color badgeColor;
   final Color badgeTextColor;
 
-  const CartButton(
-      {Key key,
-      this.onPressed,
-      @required this.itemCount,
-      this.badgeColor: Colors.red,
-      this.badgeTextColor: Colors.white})
+  const CartButton({Key key,
+    this.onPressed,
+    @required this.itemCount,
+    this.badgeColor: Colors.red,
+    this.badgeTextColor: Colors.white})
       : super(key: key);
 
   @override
   State<StatefulWidget> createState() => CartButtonState();
 }
 
-class CartButtonState extends State<CartButton> with SingleTickerProviderStateMixin {
-
+class CartButtonState extends State<CartButton>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Stack(
-        overflow: Overflow.visible,
-        children: <Widget>[
-          Icon(Icons.shopping_cart),
-        ],
-      ),
-    );
+    return getShopCartIcon(navigateToShopCartPage);
   }
+}
 
+Widget getShopCartIcon(Function onPressed) => IconButton(
+  icon: Stack(
+    overflow: Overflow.visible,
+    children: <Widget>[
+      Icon(Icons.shopping_cart),
+    ],
+  ),
+  onPressed: onPressed,
+);
+
+void navigateToShopCartPage() {
+  print('shop cart pressed 123');
 }

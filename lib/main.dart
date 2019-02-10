@@ -25,6 +25,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Bloc n'),
         actions: <Widget>[
           CartButton(),
+
         ],
       ),
       body: Grid(),
