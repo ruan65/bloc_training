@@ -22,8 +22,14 @@ class CartButtonState extends State<CartButton> with SingleTickerProviderStateMi
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return IconButton(
+      icon: Stack(
+        overflow: Overflow.visible,
+        children: <Widget>[
+          Icon(Icons.shopping_cart),
+        ],
+      ),
+    );
   }
 
 }
