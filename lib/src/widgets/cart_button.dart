@@ -7,7 +7,7 @@ class CartButton extends StatefulWidget {
   const CartButton({
     Key key,
     this.onPressed,
-    this.itemCount = 0,
+    @required this.itemCount,
   }) : super(key: key);
 
   @override
