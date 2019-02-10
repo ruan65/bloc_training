@@ -1,4 +1,4 @@
-import 'package:bloc_example/common/model/product.dart';
+import 'package:bloc_example/src/model/product.dart';
 
 class CartItem {
   final int count;

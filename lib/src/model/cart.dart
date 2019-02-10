@@ -1,8 +1,8 @@
 import 'dart:collection';
 import 'dart:math';
 
-import 'package:bloc_example/common/model/cart_item.dart';
-import 'package:bloc_example/common/model/product.dart';
+import 'package:bloc_example/src/model/cart_item.dart';
+import 'package:bloc_example/src/model/product.dart';
 
 class Cart {
   final _items = <CartItem>[];

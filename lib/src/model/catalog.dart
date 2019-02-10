@@ -1,7 +1,7 @@
 import 'dart:ui' show Color;
 import 'dart:collection';
 
-import 'package:bloc_example/common/model/product.dart';
+import 'package:bloc_example/src/model/product.dart';
 
 final Catalog catalog = fetchCatalogSync();
 

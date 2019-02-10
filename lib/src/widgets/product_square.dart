@@ -1,5 +1,5 @@
-import 'package:bloc_example/common/model/product.dart';
-import 'package:bloc_example/common/utils/is_dark.dart';
+import 'package:bloc_example/src/model/product.dart';
+import 'package:bloc_example/src/utils/is_dark.dart';
 import 'package:flutter/material.dart';
 
 class ProductSquare extends StatelessWidget {
