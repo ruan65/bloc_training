@@ -21,7 +21,7 @@ class CartButtonState extends State<CartButton>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return getShopCartIcon(navigateToShopCartPage);
+    return getShopCartIcon(widget.onPressed);
   }
 }
 
@@ -35,6 +35,4 @@ Widget getShopCartIcon(Function onPressed) => IconButton(
   onPressed: onPressed,
 );
 
-void navigateToShopCartPage() {
-  print('shop cart pressed 123');
-}
+

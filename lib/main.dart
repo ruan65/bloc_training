@@ -1,5 +1,6 @@
 import 'package:bloc_example/common/model/catalog.dart';
 import 'package:bloc_example/common/widgets/cart_button.dart';
+import 'package:bloc_example/common/widgets/cart_page.dart';
 import 'package:bloc_example/common/widgets/product_square.dart';
 import 'package:bloc_example/common/widgets/theme.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Bloc icon',
       theme: appTheme,
       home: MyHomePage(),
+      routes: <String, WidgetBuilder>{
+        CartPage.routeName: (context) => CartPage(),
+      },
     );
   }
 }
@@ -24,8 +28,11 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Bloc n'),
         actions: <Widget>[
-          CartButton(),
-
+          CartButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(CartPage.routeName);
+            },
+          ),
         ],
       ),
       body: Grid(),
