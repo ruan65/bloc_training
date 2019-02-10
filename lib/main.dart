@@ -1,3 +1,4 @@
+import 'package:bloc_example/src/bloc/cart_bloc.dart';
 import 'package:bloc_example/src/bloc/cart_provider.dart';
 import 'package:bloc_example/src/model/catalog.dart';
 import 'package:bloc_example/src/widgets/cart_button.dart';
@@ -62,11 +63,14 @@ Widget getSmokeFreeButton(BuildContext context) => IconButton(
       },
     );
 
-List<Widget> getProductListData() => catalog.products.map((product) {
+List<Widget> getProductListData(BuildContext context) =>
+    catalog.products.map((product) {
+      final cartBloc = CartProvider.of(context);
       return ProductSquare(
         product: product,
         onTap: () {
           print('I am $product');
+          cartBloc.cartAddition.add(CartAddition(product));
         },
       );
     }).toList();
@@ -76,7 +80,7 @@ class Grid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      children: getProductListData(),
+      children: getProductListData(context),
     );
   }
 }
