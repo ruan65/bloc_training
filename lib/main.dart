@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bloc n'),
+        title: Text('Bloc!'),
         actions: <Widget>[cartButton, smokeFreeButton],
       ),
       body: Grid(),
